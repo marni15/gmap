@@ -1,0 +1,493 @@
+@charset "utf-8";
+
+body, html, div, span, applet, obejct, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, em, ing, samp, small, strong, var, dl, dt, dd, ol, table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+html{
+}
+
+body  {
+font: normal 62.5%/1 Arial, Verdana, sans-serif;
+color: #333;
+background-color: #fff;
+height: 100%; 
+}
+
+body, div, span, iframe, p, table, tr, th, td, li, ul, input, textarea, select, form {
+font-size: 1.0em;
+font-family: Arial, Verdana, sans-serif
+}
+
+input, textarea, select {
+border: 1px #DDD solid;
+}
+
+input.button{
+border: 1px #DDD solid;
+cursor:pointer;
+background-color:#008080;
+color:#FFF;
+font-weight:normal;
+}
+
+input.submit{
+border: 1px #DDD solid;
+cursor:pointer;
+background-color:#008080;
+color:#FFF;
+font-weight:normal;
+}
+
+input.radio{
+border: 0px #666 solid;
+}
+
+
+p, ul, li, br {
+line-height: 1.2em;
+}
+
+p.help{
+margin-bottom:10px;
+margin-left:0px;
+}
+
+a {
+font-weight: normal; 
+color: #008080;
+text-decoration:none;
+}
+
+a:hover
+	{
+	color: red;
+}
+
+table { border-collapse: collapse; 
+		border: solid 0px #C0C0C0;
+}
+
+td {padding:3px;
+}
+
+h2 {
+font-size: 1.3em; 
+font-weight: bold;
+padding-bottom:5px;
+padding-left:3px;
+}
+
+h3 {
+font-size: 1.1em; 
+font-weight: bold;
+padding-bottom:3px;
+padding-left:3px;
+}
+
+div.iconlink{
+padding-left:2px;
+padding-bottom:6px;
+width: 130px;
+}
+
+div.lmenukop{
+padding-top:6px;
+padding-left:2px;
+width: 130px;
+font-weight:bold;
+font-size: 0.8em;
+}
+
+
+.smallfont{
+font-size: 0.9em; 
+}
+
+.bxf{
+font-size: 1.1em; 
+}
+
+.bxfs{
+font-size: 1.1em; 
+font-weight: bold;
+}
+
+.ssmallfont{
+font-size: 0.8em; 
+}
+
+.smallfontstrong{
+font-size: 0.9em; 
+font-weight: bold;
+}
+
+.ssmallfontstrong{
+font-size: 0.8em; 
+font-weight: bold;
+}
+
+.normalfontstrong{
+font-weight: bold;
+}
+
+.normalfontstrongred{
+font-weight: bold;
+color:#F00;
+}
+
+.iwindow{
+font-size: 1.2em;*/
+width: 280px;
+height:180px;
+}
+
+h1
+	{
+	font-size:2em; 
+	font-weight: bold; color: #000000;
+	text-decoration:none
+}
+
+#top{
+	float: left; 
+	width: 100%; 
+	height: 107px; /*Height of frame div*/
+	text-align: left;
+	background-image:url(several/backgroundTop.gif);
+	background-repeat:repeat-x;
+}
+
+#logo{
+	float: left; 
+	margin-top: 3px; 
+	margin-left: 10px;
+	height: 27px; /*Height of frame div*/
+	z-index: 10;
+}
+
+#topmenu{
+	float: right; 
+	height: 27px; /*Height of frame div*/
+	text-align: right;
+	z-index: 3;
+	font-size:0.8em;
+}
+
+#topcontrol{
+	float: left;
+	margin-top: 8px; 
+	height: 84px;
+	background-color:#E6F3F3;
+	text-align: left;
+	z-index: 10;
+	overflow: auto;
+	padding: 3px;
+	min-width: 100px;
+	visibility:hidden;
+}
+
+#adda{
+	float: left; 
+	top: 0px; 
+	left: 0; 
+	width: 750px;
+	height: 90px; /*Height of frame div*/
+	text-align: left;
+	z-index: 10;
+}
+
+#breadcrums{
+	float: left; 
+	height: 20px; /*Height of frame div*/
+	text-align: left;
+	padding-left: 145px;
+}
+
+#control{
+	color:#FFFFFF; 
+	font-size:10pt; 
+	font-weight:bold; 
+	background-color:#C00;
+	margin: 3px;
+}
+
+#endadd{
+	color:#FFFFFF; 
+	font-size:12pt; 
+	font-weight:bold; 
+	background-color: #C00;
+}
+
+#menu{
+	position: absolute; 
+	top: 132px; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
+#container { 
+	float: left; 
+	width: 100%;
+	height: 100%;
+} 
+
+#sidebar1 {
+	float: left; 
+	width: 139px; /* since this element is floated, a width must be given */
+    height: 100%;
+	font-size: 0.9em; 
+	padding-left: 2px; 
+}
+#sidebar2 {
+	float: right; 
+	width: 120px; /* since this element is floated, a width must be given */
+    height: 100%;
+	padding-left: 2px; 
+	padding-right: 2px; 	
+}
+
+#map {
+	float: left; 
+	height: 100%;
+} 
+
+#printmap {
+	width: 1024px; 
+	height: 550px;
+} 
+
+#middle {
+	float: left; 
+	/* min-height: 650px;*/
+	border:#CCC 0px solid;
+} 
+
+
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+img {
+	border-style: none;
+}
+
+tr.pup {
+	background-image:url(several/backgroundPup.gif);
+	background-repeat:repeat-x;
+	color:#E6F3F3;
+	font-weight: bold;
+	font-size:12px;
+}
+
+div.popup {
+	position: absolute;
+	top: 267px;
+	left: 203px;
+	padding-right:5px;
+	padding-left:5px;
+	padding-bottom:5px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	display: none;
+	border: 2px #008080 solid;
+}
+
+#puploader {
+	position: absolute;
+	top: 267px;
+	left: 203px;
+	height: 72px;
+	width: 72px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	display: none;
+	border: 2px #008080 solid;
+}
+
+#pupmonitor {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	height: 80px;
+	width: 670px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupinformatie {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	min-height: 200px;
+	width: 600px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupstreetview {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+#pupdownloads {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 530px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+#pupdelen {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 530px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+#puphoogteprof{
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+#pupganaara {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 500px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupganaarc {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 500px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupzoeknp {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 250px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupzoekrt {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 250px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupzoekfilter {
+	position: absolute;
+	top: 192px;
+	left: 203px;
+	width: 250px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#pupinstellingen {
+	position: absolute;
+	top: 192px;
+	left: 278px;
+	width: 500px;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	visibility:hidden;
+	border: 2px #008080 solid;
+}
+
+#myframe {
+	position: absolute;
+	background-color:#E6F3F3;
+	text-align:left;
+	z-index:10;
+	display: none;
+	border: 2px #008080 solid;
+}
+
+td.presentresult {
+    font-size: 0.8em;
+	background-color:#F8F8F8
+
+}
+
+.nb     {
+	color: black;
+	background-color: #EBEBE4;
+	cursor: default;
+	}
+
+#koekbalk{
+	position:absolute; 
+	top: 2px; 
+	left: 0px; 
+	width: 100%;
+	text-align:right;
+	font-size:12px;
+	font-weight:bold; 
+	background-color:#C00; 
+	color: #FFF; 
+	height:18px; 
+	padding:6px 0px 2px 0px;
+	margin-right:10px;
+	z-index:44;
+	display:none;
+	visibility:hidden;
+}
