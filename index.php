@@ -33,7 +33,7 @@
   <body background="img/page-background.png">
 
     <div class="container">
-
+            
       <form class="form-signin" action="proseslogin.php" method="post">
         <h2 class="form-signin-heading"><img src="img/1.png" /></span> Gmaps</h2>
         <div class="input-group">
@@ -45,7 +45,7 @@
          <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required>
          </div>
         <br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in/Daftar</button>
       </form>
 
     </div> <!-- /container -->
