@@ -562,6 +562,7 @@ window.onresize=function(){updateMiddleSize()};
     y = document.getElementById("east").value;
     
     document.getElementById("coordinat").innerHTML = x+" , "+y;
+    document.getElementById("a-latlong").setAttribute('value', x + ", " + y);
   }
 </script>
 </html
