@@ -182,7 +182,7 @@ if (empty($_SESSION['username'])) {
                                                 <button type = "button" onclick="fungsiku()">Combine</button>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                       
 <!--                                            <label class="col-sm-2 col-sm-2 control-label">Input</label>
                                             <div class="col-sm-8">
                                                 <p id="coordinat"></p> 
@@ -190,7 +190,6 @@ if (empty($_SESSION['username'])) {
 
 
 
-                                            <link href="style008.css" rel="stylesheet" type="text/css" />
                                             <link href="jqueryslidemenu.css"  rel="stylesheet" type="text/css" />
                                             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                                             <script type="text/javascript" src="include-eu/txt002.js"></script>
@@ -296,54 +295,31 @@ if (empty($_SESSION['username'])) {
                                                         if (basezone == nullvalue && ((baselatitude == nullvalue || (baselatitude <= 90.0 && baselatitude >= -90.0)) && (baselongitude == nullvalue || (baselongitude <= 180.0 && baselongitude >= -180.0)))) {
                                                             if (baselatitude == nullvalue && baselongitude == nullvalue) {
                                                                 document.getElementById('a-latlongd').value = '';
-                                                                document.getElementById('a-latlongdm').value = '';
-                                                                document.getElementById('a-latlongdms').value = '';
-                                                                document.getElementById('a-latlongxy').value = '';
-                                                                document.getElementById('a-latlongutm').value = '';
+                                            
                                                                 hidelink();
                                                             } else if (baselatitude == nullvalue) {// baselatitude only
                                                                 document.getElementById('a-latlongd').value = d2d(baselongitude);
-                                                                document.getElementById('a-latlongdm').value = d2dm(baselongitude, 'longitude');
-                                                                document.getElementById('a-latlongdms').value = d2dms(baselongitude, 'longitude');
-                                                                document.getElementById('a-latlongxy').value = '';
-                                                                document.getElementById('a-latlongutm').value = '';
                                                                 hidelink();
                                                             } else if (baselongitude == nullvalue) {// baselongitude only
                                                                 document.getElementById('a-latlongd').value = d2d(baselatitude);
-                                                                document.getElementById('a-latlongdm').value = d2dm(baselatitude, 'latitude');
-                                                                document.getElementById('a-latlongdms').value = d2dms(baselatitude, 'latitude');
-                                                                document.getElementById('a-latlongxy').value = '';
-                                                                document.getElementById('a-latlongutm').value = '';
                                                                 hidelink();
                                                             } else {
                                                                 document.getElementById('a-latlongd').value = d2d(baselatitude) + ', ' + d2d(baselongitude);
-                                                                document.getElementById('a-latlongdm').value = d2dm(baselatitude, 'latitude') + ', ' + d2dm(baselongitude, 'longitude');
-                                                                document.getElementById('a-latlongdms').value = d2dms(baselatitude, 'latitude') + ', ' + d2dms(baselongitude, 'longitude');
-                                                                document.getElementById('a-latlongxy').value = d2xy(baselatitude, baselongitude);
-                                                                utmresult = latlng2UTM(tmplat, tmplng);
-                                                                document.getElementById('a-latlongutm').value = utmresult.utmzone + utmresult.utmband + ' ' + utmresult.easting + ' ' + utmresult.northing;
+                                                               
                                                                 showlink();
                                                             }
                                                         } else if (basezone == nullvalue && (baselatitude >= 7000 && baselatitude <= 300000 && baselongitude >= 289000 && baselongitude <= 629000)) {//XY instead of latlng
                                                             tmplat = RD2lat(baselatitude, baselongitude);
                                                             tmplng = RD2lng(baselatitude, baselongitude);
                                                             document.getElementById('a-latlongd').value = d2d(tmplat) + ', ' + d2d(tmplng);
-                                                            document.getElementById('a-latlongdm').value = d2dm(tmplat, 'latitude') + ', ' + d2dm(tmplng, 'longitude');
-                                                            document.getElementById('a-latlongdms').value = d2dms(tmplat, 'latitude') + ', ' + d2dms(tmplng, 'longitude');
-                                                            document.getElementById('a-latlongxy').value = d2xy(tmplat, tmplng);
-                                                            utmresult = latlng2UTM(tmplat, tmplng);
-                                                            document.getElementById('a-latlongutm').value = utmresult.utmzone + utmresult.utmband + ' ' + utmresult.easting + ' ' + utmresult.northing;
+                                                            
                                                             showlink();
                                                         } else if (basezone != nullvalue && (baselatitude >= 0 && baselatitude <= 10000000 && baselongitude >= 166000 && baselongitude <= 836000)) {//UTM instead of latlng
                                                             tmplatlng = UTM2latlng(basezone, baseband, baselatitude, baselongitude);
                                                             tmplat = tmplatlng.latitude;
                                                             tmplng = tmplatlng.longitude;
                                                             document.getElementById('a-latlongd').value = d2d(tmplat) + ', ' + d2d(tmplng);
-                                                            document.getElementById('a-latlongdm').value = d2dm(tmplat, 'latitude') + ', ' + d2dm(tmplng, 'longitude');
-                                                            document.getElementById('a-latlongdms').value = d2dms(tmplat, 'latitude') + ', ' + d2dms(tmplng, 'longitude');
-                                                            document.getElementById('a-latlongxy').value = d2xy(tmplat, tmplng);
-                                                            utmresult = latlng2UTM(tmplat, tmplng);
-                                                            document.getElementById('a-latlongutm').value = utmresult.utmzone + utmresult.utmband + ' ' + utmresult.easting + ' ' + utmresult.northing;
+                                                            
                                                             showlink();
                                                         } else {
                                                             alert('illegal input');
@@ -353,10 +329,7 @@ if (empty($_SESSION['username'])) {
                                                     function resetall() {
                                                         document.getElementById('a-latlong').value = '';
                                                         document.getElementById('a-latlongd').value = '';
-                                                        document.getElementById('a-latlongdm').value = '';
-                                                        document.getElementById('a-latlongdms').value = '';
-                                                        document.getElementById('a-latlongxy').value = '';
-                                                    }
+                                                    }                                                         
 
 
                                                     latitude = readCookie('Clatitude')
@@ -392,58 +365,44 @@ if (empty($_SESSION['username'])) {
                                             </script>
 
                                             <!-- middle begin *************** -->
-                                            <div id="middle" style="padding:5px;">
+                                           
 
                                                 <table>
+                                                 <div id="middle" style="padding:5px; width: 1083px;">
 
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>input:</em></td>  
-                                                        <td><input type="text" id="a-latlong" size="25" style="font-size:large" onKeyDown="checkEnter(event, '1')"></td>
-                                                        <td colspan="2" class="normal8"><em>flexible input!</em></td>
-                                                    </tr>
-                                                    <tr><td colspan="2"></td><td colspan="2"><input type="button" value="X" onClick="resetall();" class="button" /> <input type="button" value="Convert" onClick="convertinput();" class="button" /> </td></tr>
-                                                    <tr style="height:35px"><td colspan="4"></td></tr>
-                                                    <tr><td></td><td class="smallfontstrong"><em>latitude, longitude</em> or <em>X, Y</em></td><td colspan="2"></td></tr>
+                                                  <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Koordinat Awal</label>
+                                            <div class="col-sm-8" style="width:750px;">
+                                                <input type="text" id="a-latlong"  class="form-control" size="35" style="font-size:large" onKeyDown="checkEnter(event, '1')" placeholder="Koordinat Awal">
+                                            </div>
+                                        </div>
+                                                   
+                                                   
+
+                                                     <div class="form-group" style="margin-left: 760px;" >
+                                            <label class="col-sm-3 col-sm-2 control-label"></label>
+                                            <div class="col-sm-8">
+                                                 <button type = "button" value="Convert" onClick="convertinput();">Convert</button>
+                                            </div>  
+                                        </div>
 
 
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>result:</em></td>  
-                                                        <td><input type="text" id="a-latlongd" value="" size="25" class="nb" readonly style="font-size:large" ></td>
-                                                        <td><a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongd'));
-                                                                return false;"><img src="several/copy.gif" alt="select and copy result" width="25" height="25" /></a></td>
-                                                        <td class="normal8">degrees (DD.dddddd&deg; notation)</td></tr>
+                                        <div class="form-group" >
+                                            <label class="col-sm-2 col-sm-2 control-label">Koordinat Map</label>
+                                            <div class="col-sm-8 "style="width:750px;">
+                                                <input type="text" id="a-latlongd"  class="form-control" value="" size="25" class="nb" readonly style="font-size:large" placeholder="Koordinat Map">
+                                                        <a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongd'));
+                                                                return false;">
+                                            </div>
+                                        </div>
+                                                   
 
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>result:</em></td>  
-                                                        <td><input type="text" id="a-latlongdm" value="" size="25" class="nb" readonly style="font-size:large" ></td>
-                                                        <td><a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongdm'));
-                                                                return false;"><img src="several/copy.gif" alt="select and copy result" width="25" height="25" /></a></td>
-                                                        <td class="normal8">degrees and minutes (DD&deg;MM.mmm&#8217; notation)</td></tr>
-
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>result:</em></td>  
-                                                        <td><input type="text" id="a-latlongdms" value="" size="25" class="nb" readonly style="font-size:large" ></td>
-                                                        <td><a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongdms')); return false;"><img src="several/copy.gif" alt="select and copy result" width="25" height="25" /></a></td>
-                                                        <td class="normal8">degrees, minutes and seconds (DD&deg;MM&#8217;SS.s&#8221; notation)</td></tr>
-
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>result:</em></td>  
-                                                        <td><input type="text" id="a-latlongxy" value="" size="25" class="nb" readonly style="font-size:large" ></td>
-                                                        <td><a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongxy'));
-                                                                return false;"><img src="several/copy.gif" alt="select and copy result" width="25" height="25" /></a></td>
-                                                        <td class="normal8">RD coordinates (Dutch Rijks Driehoek measurement X,Y in meters)</td></tr>
-
-                                                    <tr>
-                                                        <td class="smallfontstrong"><em>result:</em></td>  
-                                                        <td><input type="text" id="a-latlongutm" value="" size="25" class="nb" readonly style="font-size:large" ></td>
-                                                        <td><a href="#" onClick="javascript:selectcode(document.getElementById('a-latlongutm'));
-                                                                return false;"><img src="several/copy.gif" alt="select and copy result" width="25" height="25" /></a></td>
-                                                        <td class="normal8"></td></tr>
-                                                    <tr><td></td><td></td><td id="maplink" style="visibility:hidden" colspan="2">
-                                                            <input type="button" value="Show result on map" onClick="ga_naar_toon_kaart_mijn_locatie();" class="button" />
+                                            
+                                                  
+                                                   <td id="maplink" style="visibility:hidden">
+                                                            <input style="margin-left:800px;" type="button" value="See The Map " onClick="ga_naar_toon_kaart_mijn_locatie();" class="button " />
                                                         </td></tr>
                                                 </table>
-
 
                                                 <br /><br /></p>
                                             </div>
@@ -456,114 +415,110 @@ if (empty($_SESSION['username'])) {
                                         <!-- right end *************** -->
 
                                         <!-- end #container --></div>
-                                </body>
-                                </html>
+                            
+</a></div>
+
+</section><!-- /.content -->
+                <div class="footer-main">
+                     <center><h5 class="form-signin">Copyright &copy; <a href="#" data-toggle="modal" data-target="#contact">Anak Magang</a></h5></center> 
+                </div>
+
+      <!-- ./wrapper -->
 
 
+        <!-- jQuery 2.0.2 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="../js/jquery.min.js" type="text/javascript"></script>
 
-                                <!-- row end -->
-                                </section><!-- /.content -->
-                                <div class="footer-main">
-                                    <center><h5 class="form-signin">Copyright &copy; <a href="#" data-toggle="modal" data-target="#contact">Anak Magang</a></h5></center> 
-                                </div>
-                                </aside><!-- /.right-side -->
+        <!-- jQuery UI 1.10.3 -->
+        <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="../js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-                            </div><!-- ./wrapper -->
+        <script src="../js/plugins/chart.js" type="text/javascript"></script>
 
+        <!-- datepicker
+        <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
+        <!-- Bootstrap WYSIHTML5
+        <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
+        <!-- iCheck -->
+        <script src="../js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <!-- calendar -->
+        <script src="../js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
-                            <!-- jQuery 2.0.2 -->
-                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-                            <script src="../js/jquery.min.js" type="text/javascript"></script>
+        <!-- Director App -->
+        <script src="../js/Director/app.js" type="text/javascript"></script>
 
-                            <!-- jQuery UI 1.10.3 -->
-                            <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
-                            <!-- Bootstrap -->
-                            <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-                            <!-- daterangepicker -->
-                            <script src="../js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!-- Director dashboard demo (This is only for demo purposes) -->
+        <script src="../js/Director/dashboard.js" type="text/javascript"></script>
 
-                            <script src="../js/plugins/chart.js" type="text/javascript"></script>
+        <!-- Director for demo purposes -->
+        <script type="text/javascript">
+            $('input').on('ifChecked', function(event) {
+                // var element = $(this).parent().find('input:checkbox:first');
+                // element.parent().parent().parent().addClass('highlight');
+                $(this).parents('li').addClass("task-done");
+                console.log('ok');
+            });
+            $('input').on('ifUnchecked', function(event) {
+                // var element = $(this).parent().find('input:checkbox:first');
+                // element.parent().parent().parent().removeClass('highlight');
+                $(this).parents('li').removeClass("task-done");
+                console.log('not');
+            });
 
-                            <!-- datepicker
-                            <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
-                            <!-- Bootstrap WYSIHTML5
-                            <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
-                            <!-- iCheck -->
-                            <script src="../js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-                            <!-- calendar -->
-                            <script src="../js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
+        </script>
+        <script>
+            $('#noti-box').slimScroll({
+                height: '400px',
+                size: '5px',
+                BorderRadius: '5px'
+            });
 
-                            <!-- Director App -->
-                            <script src="../js/Director/app.js" type="text/javascript"></script>
+            $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
+                checkboxClass: 'icheckbox_flat-grey',
+                radioClass: 'iradio_flat-grey'
+            });
+</script>
+<script type="text/javascript">
+    $(function() {
+                "use strict";
+                //BAR CHART
+                var data = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            fillColor: "rgba(220,220,220,0.2)",
+                            strokeColor: "rgba(220,220,220,1)",
+                            pointColor: "rgba(220,220,220,1)",
+                            pointStrokeColor: "#fff",
+                            pointHighlightFill: "#fff",
+                            pointHighlightStroke: "rgba(220,220,220,1)",
+                            data: [65, 59, 80, 81, 56, 55, 40]
+                        },
+                        {
+                            label: "My Second dataset",
+                            fillColor: "rgba(151,187,205,0.2)",
+                            strokeColor: "rgba(151,187,205,1)",
+                            pointColor: "rgba(151,187,205,1)",
+                            pointStrokeColor: "#fff",
+                            pointHighlightFill: "#fff",
+                            pointHighlightStroke: "rgba(151,187,205,1)",
+                            data: [28, 48, 40, 19, 86, 27, 90]
+                        }
+                    ]
+                };
+            new Chart(document.getElementById("linechart").getContext("2d")).Line(data,{
+                responsive : true,
+                maintainAspectRatio: false,
+            });
 
-                            <!-- Director dashboard demo (This is only for demo purposes) -->
-                            <script src="../js/Director/dashboard.js" type="text/javascript"></script>
-
-                            <!-- Director for demo purposes -->
-                            <script type="text/javascript">
-                                                                $('input').on('ifChecked', function (event) {
-                                                                    // var element = $(this).parent().find('input:checkbox:first');
-                                                                    // element.parent().parent().parent().addClass('highlight');
-                                                                    $(this).parents('li').addClass("task-done");
-                                                                    console.log('ok');
-                                                                });
-                                                                $('input').on('ifUnchecked', function (event) {
-                                                                    // var element = $(this).parent().find('input:checkbox:first');
-                                                                    // element.parent().parent().parent().removeClass('highlight');
-                                                                    $(this).parents('li').removeClass("task-done");
-                                                                    console.log('not');
-                                                                });
-
-                            </script>
-                            <script>
-                                $('#noti-box').slimScroll({
-                                    height: '400px',
-                                    size: '5px',
-                                    BorderRadius: '5px'
-                                });
-
-                                $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
-                                    checkboxClass: 'icheckbox_flat-grey',
-                                    radioClass: 'iradio_flat-grey'
-                                });
-                            </script>
-                            <script type="text/javascript">
-                                $(function () {
-                                    "use strict";
-                                    //BAR CHART
-                                    var data = {
-                                        labels: ["January", "February", "March", "April", "May", "June", "July"],
-                                        datasets: [
-                                            {
-                                                label: "My First dataset",
-                                                fillColor: "rgba(220,220,220,0.2)",
-                                                strokeColor: "rgba(220,220,220,1)",
-                                                pointColor: "rgba(220,220,220,1)",
-                                                pointStrokeColor: "#fff",
-                                                pointHighlightFill: "#fff",
-                                                pointHighlightStroke: "rgba(220,220,220,1)",
-                                                data: [65, 59, 80, 81, 56, 55, 40]
-                                            },
-                                            {
-                                                label: "My Second dataset",
-                                                fillColor: "rgba(151,187,205,0.2)",
-                                                strokeColor: "rgba(151,187,205,1)",
-                                                pointColor: "rgba(151,187,205,1)",
-                                                pointStrokeColor: "#fff",
-                                                pointHighlightFill: "#fff",
-                                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                                data: [28, 48, 40, 19, 86, 27, 90]
-                                            }
-                                        ]
-                                    };
-                                    new Chart(document.getElementById("linechart").getContext("2d")).Line(data, {
-                                        responsive: true,
-                                        maintainAspectRatio: false,
-                                    });
-
-                                });
-                                // Chart.defaults.global.responsive = true;
-                            </script>
+            });
+            // Chart.defaults.global.responsive = true;
+</script>
                             </body>
                             <script>
                                 function fungsiku() {
@@ -576,4 +531,4 @@ if (empty($_SESSION['username'])) {
 
                                 }
                             </script>
-                            </html
+                            </html>
